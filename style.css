@@ -1,0 +1,45 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    box-sizing: border-box;
+}
+
+body {
+  background-color: #282c34;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+a {
+  color: #61dafb;
+}
+
+#gallery,
+#gallery .item {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+}
+
+#gallery {
+  align-items: flex-start;
+  gap: 3vh;
+  padding: 3vh;
+}
+
+#gallery .item {
+  align-items: stretch;
+  overflow: hidden;
+}
+
+#gallery .item img {
+  object-fit: cover;
+}
