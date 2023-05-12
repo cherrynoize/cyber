@@ -7,12 +7,12 @@ galleryItems['glitch'] = toMap(require.context('../../public/img/gallery/glitch/
 galleryItems['misc'] = toMap(require.context('../../public/img/gallery/misc/', false, /\.(png|jpe?g|webp|gif|tiff)$/));
 
 /* Returns map from context */
-export function toMap(ctx) {
+function toMap(ctx) {
   return ctx.keys().map(ctx);
 }
 
 /* Returns gallery item */
-export function Item(props) {
+function Item(props) {
   const [isVisible, setVisible] = React.useState(true);
   const domRef = React.useRef();
 
