@@ -1,0 +1,42 @@
+#gallery,
+#gallery .item {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+}
+
+#gallery {
+  margin-top: calc(var(--nav-btn-height) + 4vh);
+  align-items: center;
+  gap: calc(50vh - var(--nav-btn-height));
+  padding: 5vh;
+}
+
+#gallery .item {
+  align-items: stretch;
+  overflow: hidden;
+}
+
+#gallery .item,
+#gallery .item img {
+  max-width: 100vw;
+  max-height: calc(100vh - var(--nav-btn-height) - 5em);
+}
+
+#gallery .item img {
+  object-fit: cover;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(5vh);
+  visibility: hidden;
+  will-change: opacity, visibility;
+  transition: opacity 1.6s ease-out, transform .8s ease-out;
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
