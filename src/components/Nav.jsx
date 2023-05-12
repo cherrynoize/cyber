@@ -4,27 +4,27 @@ import { Link } from "react-router-dom";
 export default function Nav() {
   return (
     <nav>
-      <Link to="/gallery">
+      <Link to="/">
         <button>
           Home
         </button>
       </Link>
-      <Link to="/gallery/cyber">
+      <Link to="cyber">
         <button>
           Cyber
         </button>
       </Link>
-      <Link to="/gallery/dreams">
+      <Link to="dreams">
         <button>
           Dreams
         </button>
       </Link>
-      <Link to="/gallery/glitch">
+      <Link to="glitch">
         <button>
           Glitch
         </button>
       </Link>
-      <Link to="/gallery/misc">
+      <Link to="misc">
         <button>
           Misc
         </button>
