@@ -6,6 +6,8 @@
     --grey: #2d3236;
     --light-blue: #61dafb;
     --nav-btn-height: 3vh;
+    --nav-padding-height: 2.5vh;
+    --nav-padding-width: 3vh;
 }
 
 html, body {
@@ -53,18 +55,27 @@ button.a:hover {
     text-decoration: underline;
 }
 
-nav {
+.nav-container {
     z-index: 10;
     position: fixed;
     top: 0;
     left: 0;
-    padding: 2.5vh 3vw;
+    right: 0;
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
+}
+
+nav {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
     gap: 2vw;
+    padding: var(--nav-padding-height) var(--nav-padding-width);
     background-color: var(--main-bg);
 }
 
@@ -73,7 +84,7 @@ nav a.button {
     --brdr-color: #cfcfcfdf;
     --brdr-width: 3px;
     position: relative;
-    padding: calc(var(--nav-btn-height)/2) 3vw;
+    padding: calc(var(--nav-btn-height)/2) 3vw var(--nav-btn-height) 3vw;
     border-style: solid;
     border-color: transparent;
     border-width: 0 0 var(--brdr-width) 0;
@@ -96,8 +107,8 @@ nav a.button:hover {
     text-decoration: none;
 }
 
-nav button::after,
-nav a.button::after {
+nav :not(.right) button::after,
+nav a.button:not(.right)::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -118,6 +129,12 @@ nav a.button:focus::after {
     height: var(--brdr-width);
     opacity: 1;
     transform: scale(1);
+}
+
+nav .right {
+    z-index: 11;
+    position: absolute;
+    right: var(--nav-padding-width);
 }
 
 footer {
