@@ -29,7 +29,7 @@ export default function Nav() {
           Misc
         </button>
       </Link>
-      <Link className="right" to="https://cherrynoize.github.io/">
+      <Link className="right" to="https://cherrynoize.github.io/#/home/">
         <button className="arrow to-left">
           <span>Back</span>
         </button>
