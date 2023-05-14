@@ -30,8 +30,8 @@ export default function Nav() {
         </button>
       </Link>
       <Link className="right" to="https://cherrynoize.github.io/">
-        <button>
-          Back
+        <button className="arrow to-left">
+          <span>Back</span>
         </button>
       </Link>
     </nav>
