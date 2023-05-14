@@ -55,21 +55,12 @@ button.a:hover {
     text-decoration: underline;
 }
 
-.nav-container {
+nav {
     z-index: 10;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    width: 100%;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-nav {
-    position: relative;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
@@ -134,7 +125,66 @@ nav a.button:focus::after {
 nav .right {
     z-index: 11;
     position: absolute;
-    right: var(--nav-padding-width);
+    right: 0;
+}
+
+.arrow {
+    position: relative;
+    right: calc(var(--nav-padding-width) * 2 + .4em);
+    align-items: flex-start;
+    transition: transform 0.3s;
+}
+
+.arrow span {
+    display: block;
+    opacity: 0;
+    transition: opacity 0.3s 0s;
+    padding: 0 0.5em;
+}
+
+.arrow:hover span {
+    opacity: 1;
+    transition: opacity 0.3s 0.1s;
+}
+
+.arrow::before {
+    content: '';
+    border: solid var(--fg);
+    border-width: 2px 2px 0 0;
+    position: absolute;
+    top: .8em;
+    width: .8em;
+    height: .8em;
+}
+
+.arrow.to-left::before {
+    transform: rotate(-135deg);
+    right: 0;
+    transition: right 0.3s 0.2s;
+}
+
+.arrow.to-left:hover::before {
+    right: 100%;
+    transition: right 0.3s;
+}
+
+.arrow.to-right {
+    text-align: right;
+}
+
+.arrow.to-right::before {
+    left: 0;
+    transform: rotate(45deg);
+    transition: left 0.3s 0.2s;
+}
+
+.arrow.to-right:hover::before {
+    left: 100%;
+    transition: left 0.3s;
+}
+
+.arrow:hover {
+    transform: none;
 }
 
 footer {
