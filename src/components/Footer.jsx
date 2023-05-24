@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 export default function Footer() {
   return (
     <footer>
-      <Link target="_blank" to='https://cherrynoize.github.io/#/contacts'>
+      <Link to='https://cherrynoize.github.io/#/contacts'>
         <button className='a'>
           Contacts
         </button>
       </Link>
-      <Link target="_blank" to='https://cherrynoize.github.io/#/contribute'>
+      <Link to='https://cherrynoize.github.io/#/contribute'>
         <button className='a'>
           Contribute
         </button>
